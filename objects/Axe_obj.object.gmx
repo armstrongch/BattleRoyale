@@ -27,7 +27,6 @@
             <kind>1</kind>
             <string>event_inherited();
 
-reload_speed = 0.2;
 spin_rate = 24;
 melee = true;
 </string>

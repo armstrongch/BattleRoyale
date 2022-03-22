@@ -27,19 +27,19 @@
             <kind>1</kind>
             <string>draw_roof = true;
 
-for (i = 0; i &lt;= image_xscale*16; i += 16)
+for (i = 0; i &lt; image_xscale*16; i += 16)
 {
     new_wall = instance_create(x+i, y, Wall_obj);
     new_wall.house = self;
-    new_wall = instance_create(x+i, y+image_yscale*16, Wall_obj);
+    new_wall = instance_create(x+i, y + (image_yscale-1)*16, Wall_obj);
     new_wall.house = self;
 }
 
-for (i = 0; i &lt;= image_yscale*16; i += 16)
+for (i = 0; i &lt; image_yscale*16; i += 16)
 {
     new_wall = instance_create(x, y+i, Wall_obj);
     new_wall.house = self;
-    new_wall = instance_create(x+image_xscale*16, y+i, Wall_obj);
+    new_wall = instance_create(x + (image_xscale-1)*16, y+i, Wall_obj);
     new_wall.house = self;
 }
 
@@ -48,14 +48,14 @@ door_side_index = irandom(3);
 door_window_x[0] = x;
 door_window_y[0] = y + round(image_yscale/2)*16;
 
-door_window_x[1] = x + image_xscale*16;
+door_window_x[1] = x + (image_xscale-1)*16;
 door_window_y[1] = y + round(image_yscale/2)*16;
 
 door_window_x[2] = x + round(image_xscale/2)*16;
 door_window_y[2] = y;
 
 door_window_x[3] = x + round(image_xscale/2)*16;
-door_window_y[3] = y + image_yscale*16;
+door_window_y[3] = y + (image_yscale-1)*16;
 
 if (instance_number(BulletMask_obj) == 0) { instance_create(0, 0, BulletMask_obj); }
 
@@ -103,9 +103,9 @@ draw_roof = true;
             <string>if (draw_roof) &amp;&amp; (!PlayerInside())
 {
     roof_opacity = 1;
-    for (i = x; i &lt;= x+image_xscale*16; i += 16)
+    for (i = x; i &lt; x+image_xscale*16; i += 16)
     {
-        for (j = y; j &lt; y+image_yscale*16; j += 16)
+        for (j = y; j &lt; y+(image_yscale-1)*16; j += 16)
         {
             draw_roof = true;
             for (k = 0; k &lt; 4; k += 1)

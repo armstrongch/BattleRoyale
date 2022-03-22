@@ -10,27 +10,33 @@
     <sprite>sprites\Grass_spr</sprite>
     <sprite>sprites\Horse_spr</sprite>
     <sprite>sprites\Mask_spr</sprite>
-    <sprite>sprites\Wall_spr</sprite>
-    <sprite>sprites\Pistol_spr</sprite>
     <sprite>sprites\Reload_spr</sprite>
-    <sprite>sprites\Bullet_spr</sprite>
-    <sprite>sprites\Shotgun_spr</sprite>
-    <sprite>sprites\AssaultRifle_spr</sprite>
-    <sprite>sprites\SMG_spr</sprite>
-    <sprite>sprites\Uzi_spr</sprite>
-    <sprite>sprites\Swotd_spr</sprite>
     <sprite>sprites\Footprints_spr</sprite>
-    <sprite>sprites\Bazooka_spr</sprite>
-    <sprite>sprites\Rocket_spr</sprite>
-    <sprite>sprites\Explode_spr</sprite>
-    <sprite>sprites\Grenade_spr</sprite>
-    <sprite>sprites\Axe_spr</sprite>
-    <sprite>sprites\Window_spr</sprite>
-    <sprite>sprites\Roof_spr</sprite>
-    <sprite>sprites\RoofWindow_spr</sprite>
-    <sprite>sprites\House_spr</sprite>
-    <sprite>sprites\Door_spr</sprite>
-    <sprite>sprites\DoorIndicator_spr</sprite>
+    <sprite>sprites\Road_spr</sprite>
+    <sprite>sprites\Car_spr</sprite>
+    <sprites name="Weapons">
+      <sprite>sprites\Shotgun_spr</sprite>
+      <sprite>sprites\Axe_spr</sprite>
+      <sprite>sprites\AssaultRifle_spr</sprite>
+      <sprite>sprites\Swotd_spr</sprite>
+      <sprite>sprites\Bullet_spr</sprite>
+      <sprite>sprites\Uzi_spr</sprite>
+      <sprite>sprites\Explode_spr</sprite>
+      <sprite>sprites\Bazooka_spr</sprite>
+      <sprite>sprites\Rocket_spr</sprite>
+      <sprite>sprites\Grenade_spr</sprite>
+      <sprite>sprites\SMG_spr</sprite>
+      <sprite>sprites\Pistol_spr</sprite>
+    </sprites>
+    <sprites name="House">
+      <sprite>sprites\RoofWindow_spr</sprite>
+      <sprite>sprites\Door_spr</sprite>
+      <sprite>sprites\DoorIndicator_spr</sprite>
+      <sprite>sprites\Wall_spr</sprite>
+      <sprite>sprites\Window_spr</sprite>
+      <sprite>sprites\House_spr</sprite>
+      <sprite>sprites\Roof_spr</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\Empty_bk</background>
@@ -42,11 +48,13 @@
     <script>scripts\GetInput.gml</script>
     <script>scripts\Walk.gml</script>
     <script>scripts\WobbleWalk.gml</script>
-    <script>scripts\HandleWeapon.gml</script>
+    <script>scripts\HandleInput.gml</script>
     <script>scripts\InsideView.gml</script>
     <script>scripts\CreateBullet.gml</script>
     <script>scripts\GetBulletPos.gml</script>
     <script>scripts\PlayerInside.gml</script>
+    <script>scripts\SetWalkSpeed.gml</script>
+    <script>scripts\VehicleCheck.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Singletons">
@@ -77,6 +85,9 @@
       <object>objects\Sword_obj</object>
     </objects>
     <object>objects\House_obj</object>
+    <object>objects\Road_obj</object>
+    <object>objects\Vehicle_obj</object>
+    <object>objects\Car_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Title_rm</room>

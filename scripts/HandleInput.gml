@@ -1,4 +1,14 @@
-if (weapon != noone)
+if (vehicle)
+{
+    if (Space)
+    {
+        vehicle.occupied = false;
+        vehicle.x = x;
+        vehicle.y = y;
+        vehicle = noone;
+    }
+}
+else if (weapon != noone)
 {
     if (Up || Down || Left || Right)
     {
@@ -40,24 +50,17 @@ if (weapon != noone)
         }
     }
     
-    if ((weapon.reload_counter <= 0) && (Space))
+    if ((weapon.reload_counter <= 0) && (Space) && !(weapon.melee))
     {
-        weapon.reload_counter = weapon.max_reload_counter;
         weapon_angle += weapon.recoil;
         with (weapon)
         {
-            if (melee)
+            reload_counter = max_reload_counter;
+            repeat(projectile_count)
             {
-                spin_rate = spin_rate * -1;
-            }
-            else
-            {   
-                repeat(projectile_count)
-                {
-                    if (throwable) { bullet_sprite = sprite_index; } else { bullet_sprite = Bullet_spr; }
-                    
-                    CreateBullet(image_angle, range, explosive, accuracy_penalty, bullet_sprite);
-                }
+                if (throwable) { bullet_sprite = sprite_index; } else { bullet_sprite = Bullet_spr; }
+                
+                CreateBullet(image_angle, range, explosive, accuracy_penalty, bullet_sprite);
             }
         }
         

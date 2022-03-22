@@ -1,6 +1,7 @@
 if (Up || Down || Left || Right)
 {
     WobbleWalk();
+    SetWalkSpeed();
     
     x_mod = Right - Left;
     y_mod = Down - Up;
